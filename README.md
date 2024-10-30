@@ -1,12 +1,6 @@
-# [Name]
-## [Assignment #]
-## [Submission date: MM/DD/YY]
+# [Branden]
+## [Assignment #7]
+## [Submission date: 10/29/24]
 ## Worked with/sources 
-* example
-* example
-* example
-* example
-## Project Quirks/ Things that don't work
-* example
-* example
-* example
+* https://www.w3schools.com/python/ref_string_replace.asp
+* https://www.w3schools.com/python/ref_string_split.asp

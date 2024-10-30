@@ -1,8 +1,8 @@
-# Your Name Here
+# Branden Wilkins
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section: 
+# 10/29/2024
+# Lab 07
+# Lab Section: 11 
 # Sources, people worked with, help given to: 
 # your
 # comments
@@ -17,9 +17,18 @@
     # If a user did not enter a number output a statement saying so
 # You will continue to prompt the user until a proper integer value is entered
 
-factorial = 1
-
-print(f"The result of the factorial based on the given bound is {factorial}")
+while True:
+    User_Input = input("please input a upper bound: ")
+    if User_Input.isdigit() and int(User_Input) > 0:
+        User_Input = int(User_Input)
+        factorial = 1
+        for i in range(1, User_Input + 1):
+            factorial *= i
+        print(f"The result of the factorial based on the given bound is {factorial}")
+        break
+    else:
+        print("please give me a valid upper bound")
+    
 
 print("*"*75)
 # Create a while loop that prompts a user for input of an integer values
@@ -38,8 +47,17 @@ print("*"*75)
 # The sum should start at 0 
 
 num_sum = 0 
-
-print(f"Your final sum is {num_sum}")
+while True:
+    User_Num = input("please give me a number: ")
+    if User_Num.lower() == "exit":
+        break
+    elif User_Num[0] == "-" and User_Num[0:].replace("-","").isdigit():
+        num_sum += int(User_Num)
+    elif User_Num.isdigit():
+        num_sum += int(User_Num)
+    else:
+        print("please give me a valid number")
+print(f"your final sun is {num_sum}")   
 
 print("*"*75)
 # Now you will be creating a two operand calculator
@@ -58,5 +76,32 @@ print("*"*75)
     # So, it should function the same for `5 + 6` as `5+6`
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
+
+while True:
+    User_Problum = input("please give me a equation: ")
+    if User_Problum.lower() == "exit":
+        break
+    for symble in ["+","-","%","/","*"]:
+        if (symble in User_Problum):
+            problum = User_Problum.split(symble)
+            part1 = problum[0].replace(" ","")
+            part2 = problum[1].replace(" ","")
+            if part1.isdigit() and part2.isdigit():
+                part1 = int(part1)
+                part2 = int(part2)
+                if symble == '+':
+                    answer = part1 + part2
+                elif symble == '-':
+                    answer = part1 - part2
+                elif symble == '/':
+                    answer = part1 / part2
+                elif symble == '*':
+                    answer = part1 * part2
+                elif symble == '%':
+                    answer = part1 % part2
+                print(f"The answer is: {answer}")
+                break
+    else:
+        print("please imput a valid problum")
 
         
